@@ -3,22 +3,22 @@ package com.company;
 import java.util.HashMap;
 
 public class Main {
-    static public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> hashMap = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (hashMap.containsKey(nums[i])) {
-                return new int[] {hashMap.get(nums[i]), i};
+    static public boolean isPalindrome(int x) {
+        String s = String.valueOf(x);
+        boolean result = false;
+        char[] nums = s.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            if (nums[i]==nums[nums.length-1-i]){
+                result=true;
             }
-            hashMap.put(target-nums[i], i);
+            else return false;
         }
-        return null;
+        return result;
     }
-
 
     public static void main(String[] args) {
 
-        int[] test = {2, 7, 11, 15};
-        System.out.println(twoSum(test,9)[0]);
-        System.out.println(twoSum(test,9)[1]);
+        System.out.println(isPalindrome(121));
+
     }
 }
